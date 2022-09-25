@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import TextField from "@mui/material/TextField";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
@@ -17,6 +17,11 @@ export default function FlightComponent() {
           aria-labelledby="travel type"
           defaultValue="Return"
           name="radioTravelType"
+          sx={{
+            "&.Mui-checked": {
+              color: "#4B8DF8",
+            },
+          }}
           row
         >
           <FormControlLabel
@@ -127,8 +132,7 @@ export default function FlightComponent() {
           <Stack spacing={0}>
             <InputLabel>Travel Class</InputLabel>
             <Select
-              labelId="selectTravelClass"
-              id="demo-simple-select"
+              id="selectTravelClass"
               onChange=""
               sx={{
                 minWidth: "250px",
@@ -143,7 +147,6 @@ export default function FlightComponent() {
           <Stack spacing={0}>
             <InputLabel>Airlines Preference</InputLabel>
             <Select
-              labelId="demo-simple-select-label"
               id="selectAirlinesPref"
               onChange=""
               sx={{
@@ -157,7 +160,15 @@ export default function FlightComponent() {
         </Stack>
       </div>
       <div>
-        <Button variant="contained">Buy Now</Button>
+        <Button
+          variant="contained"
+          sx={{
+            float: "right",
+            backgroundColor: "#801C7D",
+          }}
+        >
+          Buy Now
+        </Button>
       </div>
     </Stack>
   );

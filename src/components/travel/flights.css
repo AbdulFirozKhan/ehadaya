@@ -2,3 +2,8 @@
   color: #801C7D;
   float: right;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+}
