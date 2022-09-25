@@ -1,0 +1,16 @@
+.travel-header {
+    color: #77126A;
+    font-family: Helvetica, sans-serif;
+}
+
+.travel-header-bold {
+    color: #77126A;
+    font-family: Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+

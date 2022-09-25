@@ -1,0 +1,11 @@
+.sibeBar-nav{
+    background: #77126a 0% 0% no-repeat padding-box;
+background: #77126A 0% 0% no-repeat padding-box;
+border-radius: 0px 40px 40px 0px;
+opacity: 1;
+height: 100vh;
+}
+.sibeBar-nav button {
+    color: #ffffff;
+}
+.main-logo {width: 110px;margin: 1rem auto;}
