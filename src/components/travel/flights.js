@@ -8,8 +8,11 @@ import InputLabel from "@mui/material/InputLabel";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import moment from "moment";
 
 export default function FlightComponent() {
+  const todaysDate = moment(new Date()).format("YYYY-MM-DD");
+
   return (
     <Stack spacing={1}>
       <div>
@@ -70,6 +73,7 @@ export default function FlightComponent() {
             <TextField
               id="dateDeparture"
               type="date"
+              defaultValue={todaysDate}
               sx={{ width: 250 }}
               InputLabelProps={{
                 shrink: true,
@@ -81,7 +85,7 @@ export default function FlightComponent() {
             <TextField
               id="dateArrival"
               type="date"
-              defaultValue=""
+              defaultValue={todaysDate}
               sx={{ width: 250 }}
               InputLabelProps={{
                 shrink: true,
@@ -139,9 +143,9 @@ export default function FlightComponent() {
                 height: "40px",
               }}
             >
-              <MenuItem value={10}>Economy</MenuItem>
-              <MenuItem value={20}>Business</MenuItem>
-              <MenuItem value={30}>First</MenuItem>
+              <MenuItem value={1}>Economy</MenuItem>
+              <MenuItem value={2}>Business</MenuItem>
+              <MenuItem value={3}>First</MenuItem>
             </Select>
           </Stack>
           <Stack spacing={0}>

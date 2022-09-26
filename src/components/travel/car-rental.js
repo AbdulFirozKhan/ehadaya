@@ -1,21 +1,25 @@
 import React from "react";
-import TextField from "@mui/material/TextField";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
 import InputLabel from "@mui/material/InputLabel";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
 import "./car-rental.css";
+import moment from "moment";
 
 export default function CarRentalComponent() {
+  const todaysDate = moment(new Date()).format("YYYY-MM-DD");
   return (
     <Stack spacing={2}>
       <div>
         <Stack direction="row" spacing={2}>
           <Stack spacing={0}>
-            <InputLabel>Counntry</InputLabel>
+            <InputLabel>Country</InputLabel>
             <Select
-              labelId="Select Counntry"
+              labelId="Select Country"
               id="demo-simple-select"
               onChange=""
               sx={{
@@ -48,7 +52,7 @@ export default function CarRentalComponent() {
             id="Select Location"
             onChange=""
             sx={{
-              minWidth: "520px",
+              maxWidth: "515px",
               height: "40px",
             }}
           >
@@ -64,32 +68,75 @@ export default function CarRentalComponent() {
             <TextField
               id="datePick-UP-Date"
               type="date"
+              defaultValue={todaysDate}
               sx={{ width: 250 }}
               InputLabelProps={{
                 shrink: true,
               }}
             />
           </Stack>
+          <Stack spacing={0}>
+            <InputLabel>Pick-UP Time</InputLabel>
+            <TextField
+              id="time"
+              type="time"
+              defaultValue="00:00"
+              sx={{ width: 250 }}
+            />
+          </Stack>
         </Stack>
       </div>
       <div>
-        <Stack direction="row" spacing={2}></Stack>
-        <Stack spacing={0}>
-          <InputLabel>Drop-Off Date</InputLabel>
-          <TextField
-            id="dateDrop-Off-Date"
-            type="date"
-            defaultValue=""
-            sx={{ width: 250 }}
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
+        <Stack direction="row" spacing={2}>
+          <Stack spacing={0}>
+            <InputLabel>Drop-Off Date</InputLabel>
+            <TextField
+              id="dateDrop-Off-Date"
+              type="date"
+              defaultValue={todaysDate}
+              sx={{ width: 250 }}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+          </Stack>
+          <Stack spacing={0}>
+            <InputLabel>Drop-Off Time</InputLabel>
+            <TextField
+              id="time"
+              type="time"
+              defaultValue="00:00"
+              sx={{ width: 250 }}
+            />
+          </Stack>
         </Stack>
       </div>
-
       <div>
-        <Button variant="contained">Search Car</Button>
+        <div>
+          <Stack direction="row" spacing={2}>
+            <FormControlLabel
+              value="ReturnToSameLocation"
+              control={<Checkbox />}
+              label="Return to same location"
+            />
+            <FormControlLabel
+              value="DriverAge"
+              control={<Checkbox />}
+              label="Driver aged between 25 -70 years"
+            />
+          </Stack>
+        </div>
+      </div>
+      <div>
+        <Button
+          variant="contained"
+          sx={{
+            float: "right",
+            backgroundColor: "#801C7D",
+          }}
+        >
+          Search Car
+        </Button>
       </div>
     </Stack>
   );

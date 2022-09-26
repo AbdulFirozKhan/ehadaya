@@ -5,10 +5,12 @@ import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import InputLabel from "@mui/material/InputLabel";
+import moment from "moment";
 
 import "./hotels.css";
 
 export default function HotelsComponent() {
+  const todaysDate = moment(new Date()).format("YYYY-MM-DD");
   return (
     <Stack spacing={2}>
       <div>
@@ -32,6 +34,7 @@ export default function HotelsComponent() {
             <InputLabel>Check-In</InputLabel>
             <TextField
               id="Check-In"
+              defaultValue={todaysDate}
               type="date"
               sx={{ width: 250 }}
               InputLabelProps={{
@@ -44,7 +47,7 @@ export default function HotelsComponent() {
             <TextField
               id="dateCheck-Out"
               type="date"
-              defaultValue=""
+              defaultValue={todaysDate}
               sx={{ width: 250 }}
               InputLabelProps={{
                 shrink: true,
@@ -94,7 +97,15 @@ export default function HotelsComponent() {
       </div>
 
       <div>
-        <Button variant="contained">Search Hotel</Button>
+        <Button
+          variant="contained"
+          sx={{
+            float: "right",
+            backgroundColor: "#801C7D",
+          }}
+        >
+          Search Hotel
+        </Button>
       </div>
     </Stack>
   );
